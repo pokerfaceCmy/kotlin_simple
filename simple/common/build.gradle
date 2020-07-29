@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -27,18 +33,22 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:${ktx_version}"
-    implementation "androidx.appcompat:appcompat:${appcompat_version}"
-    implementation "androidx.constraintlayout:constraintlayout:${constraintlayout_version}"
+
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api "androidx.core:core-ktx:${ktx_version}"
+    api "androidx.appcompat:appcompat:${appcompat_version}"
+    api "androidx.constraintlayout:constraintlayout:${constraintlayout_version}"
+
     testImplementation "junit:junit:${junit_version}"
     androidTestImplementation "androidx.test.ext:junit:${test_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
 
-
-
-    implementation "com.squareup.moshi:moshi-kotlin:${moshi_version}"
+    //json
+    api "com.squareup.moshi:moshi-kotlin:${moshi_version}"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:${moshi_version}"
-
-    implementation "com.jakewharton.timber:timber:${timber_version}"
+    //log
+    api "com.jakewharton.timber:timber:${timber_version}"
+    //ARouter
+    api "com.alibaba:arouter-api:${arouter_api_version}"
+    annotationProcessor "com.alibaba:arouter-compiler:${arouter_compiler_version}"
 }
