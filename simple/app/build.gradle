@@ -28,22 +28,24 @@ android {
     }
 
     buildTypes {
-        //开发版
-        debug {
-            //如果依赖的模块中没有相对应的构建版本,则先构建debug版本;如果连debug版本都没有就构建release版本
-            matchingFallbacks = ['debug','release']
+        //开发版(应用开发阶段选择此版本)
+        dev {
+            //如果依赖的模块中没有相对应的构建版本,则构建debug版本
+            matchingFallbacks = ['debug']
         }
-        //内测版
-        canary{
-            matchingFallbacks = ['debug','release']
+        //内测版(提交给公司测试选择此版本)
+        alpha{
+            matchingFallbacks = ['debug']
         }
-        //测试版
+        //测试版(内测完成后的灰度测试版本)
         beta{
-            matchingFallbacks = ['debug','release']
+            //如果依赖的模块中没有相对应的构建版本,则构建release版本
+            matchingFallbacks = ['release']
         }
-        //正式版
+        //正式版(分发给所有用户的版本)
         release {
-            minifyEnabled false
+            //正式版开启混淆
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
