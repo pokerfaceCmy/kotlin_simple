@@ -7,7 +7,6 @@ android {
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-//      canary{体验版},dev{开发版},beta{测试版},stable{正式版}
         applicationId "com.cmy.kotlinsimple"
         minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION as int
         targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
@@ -20,6 +19,7 @@ android {
             abiFilters 'armeabi-v7a','x86'
         }
 
+        //ARouter路由框架配置
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -28,6 +28,20 @@ android {
     }
 
     buildTypes {
+        //开发版
+        debug {
+            //如果依赖的模块中没有相对应的构建版本,则先构建debug版本;如果连debug版本都没有就构建release版本
+            matchingFallbacks = ['debug','release']
+        }
+        //内测版
+        canary{
+            matchingFallbacks = ['debug','release']
+        }
+        //测试版
+        beta{
+            matchingFallbacks = ['debug','release']
+        }
+        //正式版
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
