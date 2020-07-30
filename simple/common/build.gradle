@@ -30,6 +30,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -52,4 +57,23 @@ dependencies {
     //ARouter
     api "com.alibaba:arouter-api:${arouter_api_version}"
     annotationProcessor "com.alibaba:arouter-compiler:${arouter_compiler_version}"
+    //okHttp3
+    api "com.squareup.okhttp3:okhttp:${okHttp_version}"
+    implementation"com.squareup.okhttp3:logging-interceptor:${okHttp_version}"
+    //retrofit2
+    api "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:${retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    //RxJava
+    //noinspection GradleDependency
+    api "io.reactivex.rxjava3:rxkotlin:${rxjava_version}"
+    api "io.reactivex.rxjava3:rxandroid:${rxjava_version}"
+    //stetho
+    api "com.facebook.stetho:stetho:${stetho_version}"
+    api "com.facebook.stetho:stetho-okhttp3:${stetho_version}"
+    //util
+    api "com.blankj:utilcodex:${utilcode_version}"
+    //lottie
+    api "com.airbnb.android:lottie:${lottie_version}"
+
 }

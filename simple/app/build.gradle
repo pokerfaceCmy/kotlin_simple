@@ -55,6 +55,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     annotationProcessor "com.alibaba:arouter-compiler:${arouter_compiler_version}"
+    api "com.leon.channel:helper:$channel_version"
 
     implementation project(path: ':common')
     implementation project(path: ':domain')
