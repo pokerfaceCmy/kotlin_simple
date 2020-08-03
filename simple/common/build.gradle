@@ -35,6 +35,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -52,6 +56,7 @@ dependencies {
     //json
     api "com.squareup.moshi:moshi-kotlin:${moshi_version}"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:${moshi_version}"
+    api 'com.google.code.gson:gson:2.8.6'
     //log
     api "com.jakewharton.timber:timber:${timber_version}"
     //ARouter
@@ -59,11 +64,12 @@ dependencies {
     annotationProcessor "com.alibaba:arouter-compiler:${arouter_compiler_version}"
     //okHttp3
     api "com.squareup.okhttp3:okhttp:${okHttp_version}"
-    implementation"com.squareup.okhttp3:logging-interceptor:${okHttp_version}"
+    api"com.squareup.okhttp3:logging-interceptor:${okHttp_version}"
     //retrofit2
     api "com.squareup.retrofit2:retrofit:${retrofit_version}"
     implementation "com.squareup.retrofit2:adapter-rxjava3:${retrofit_version}"
-    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+//    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"
     //RxJava
     //noinspection GradleDependency
     api "io.reactivex.rxjava3:rxkotlin:${rxjava_version}"
