@@ -82,4 +82,5 @@ dependencies {
     //lottie
     api "com.airbnb.android:lottie:${lottie_version}"
 
+    api(name: 'open_ad_sdk', ext: 'aar')
 }

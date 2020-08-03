@@ -82,7 +82,7 @@ open class HttpManager private constructor() {
     }
 
     fun build() {
-        getInstance().mRetrofitBuilder = generateRetrofitBuilder(getInstance().mBaseUrl)
+
     }
 
 

@@ -7,7 +7,7 @@ android {
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.cmy.kotlinsimple"
+        applicationId "com.cmy.demo.adtest.my"
         minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION as int
         targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
         versionCode project.VERSION_CODE as int

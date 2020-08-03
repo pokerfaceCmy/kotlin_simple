@@ -3,8 +3,8 @@ package com.cmy.kotlinsimple
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.cmy.common.ad.SplashAdActivity
 import com.cmy.common.repository.LoadingDialog
-import com.cmy.domain.gank.GankActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        startActivity(Intent(this, GankActivity::class.java))
+        startActivity(Intent(this, SplashAdActivity::class.java))
     }
 }
