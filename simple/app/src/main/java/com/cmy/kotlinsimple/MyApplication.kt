@@ -4,13 +4,21 @@ import android.app.Application
 import com.bytedance.sdk.openadsdk.TTAdConfig
 import com.bytedance.sdk.openadsdk.TTAdSdk
 import com.cmy.common.repository.remote.HttpManager
+import timber.log.Timber
 
 
 open class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        initLog()
         initHttp()
         initAd()
+    }
+
+    private fun initLog() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 
     /**
