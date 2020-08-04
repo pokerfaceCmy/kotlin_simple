@@ -33,7 +33,7 @@ class SplashAdActivity : AppCompatActivity() {
             .setSupportDeepLink(true)
             .setImageAcceptedSize(740, 1334)
             .build()
-        mTTAdNative!!.loadSplashAd(adSlot, object : TTAdNative.SplashAdListener {
+        mTTAdNative?.loadSplashAd(adSlot, object : TTAdNative.SplashAdListener {
             override fun onSplashAdLoad(ad: TTSplashAd?) {
                 Timber.i("onSplashAdLoad")
                 val view: View? = ad?.splashView

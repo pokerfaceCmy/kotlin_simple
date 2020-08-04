@@ -26,7 +26,7 @@ android {
     buildTypes {
         //正式版
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -83,4 +83,6 @@ dependencies {
     api "com.airbnb.android:lottie:${lottie_version}"
 
     api(name: 'open_ad_sdk', ext: 'aar')
+    api(name: 'GDTSDK.unionNormal.4.232.1102', ext: 'aar')
+
 }
