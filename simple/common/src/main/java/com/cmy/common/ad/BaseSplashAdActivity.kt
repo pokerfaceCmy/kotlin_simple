@@ -2,13 +2,13 @@ package com.cmy.common.ad
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.bytedance.sdk.openadsdk.AdSlot
 import com.bytedance.sdk.openadsdk.TTAdNative
 import com.bytedance.sdk.openadsdk.TTAdSdk
 import com.bytedance.sdk.openadsdk.TTSplashAd
+import com.cmy.common.BaseActivity
 import com.cmy.common.R
-import kotlinx.android.synthetic.main.activity_splash_ad.*
+import kotlinx.android.synthetic.main.activity_base_splash_ad.*
 import timber.log.Timber
 
 
@@ -18,11 +18,11 @@ import timber.log.Timber
  * @description 开屏广告activity
  * @email cheng.meng.yuan@qq.com
  */
-class SplashAdActivity : AppCompatActivity() {
+abstract class BaseSplashAdActivity : BaseActivity() {
     private var mTTAdNative: TTAdNative? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_ad)
+        setContentView(R.layout.activity_base_splash_ad)
         mTTAdNative = TTAdSdk.getAdManager().createAdNative(this)
         loadSplashAd()
     }
@@ -68,5 +68,8 @@ class SplashAdActivity : AppCompatActivity() {
         })
     }
 
+    abstract fun getSplashImage(): Int
+
+    abstract fun getTargetActivity(): Class<*>?
 
 }

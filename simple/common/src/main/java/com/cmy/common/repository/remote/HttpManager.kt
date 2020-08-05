@@ -25,6 +25,7 @@ open class HttpManager private constructor() {
     private var mRetrofitBuilder: Retrofit.Builder = generateRetrofitBuilder(mBaseUrl)
 
     companion object {
+        @Volatile
         private var INSTANCE: HttpManager? = null
 
         //双重校验锁的单例模式
@@ -36,7 +37,7 @@ open class HttpManager private constructor() {
                     }
                 }
             }
-            return this.INSTANCE!!
+            return INSTANCE!!
         }
 
         @JvmStatic

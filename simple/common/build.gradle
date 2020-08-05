@@ -54,8 +54,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
 
     //json
-    api "com.squareup.moshi:moshi-kotlin:${moshi_version}"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:${moshi_version}"
     api 'com.google.code.gson:gson:2.8.6'
     //log
     api "com.jakewharton.timber:timber:${timber_version}"

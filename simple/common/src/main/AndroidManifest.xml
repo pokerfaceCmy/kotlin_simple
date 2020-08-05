@@ -7,7 +7,7 @@
     <application>
 
         <activity android:name=".ad.SkipSplashAdActivity" />
-        <activity android:name=".ad.SplashAdActivity" />
+        <activity android:name=".ad.BaseSplashAdActivity" />
 
     </application>
 
