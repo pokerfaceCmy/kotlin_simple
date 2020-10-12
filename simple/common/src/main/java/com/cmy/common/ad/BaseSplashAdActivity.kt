@@ -18,7 +18,7 @@ import timber.log.Timber
  * @description 开屏广告activity
  * @email cheng.meng.yuan@qq.com
  */
-abstract class BaseSplashAdActivity : BaseActivity() {
+ class BaseSplashAdActivity : BaseActivity() {
     private var mTTAdNative: TTAdNative? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,8 +68,8 @@ abstract class BaseSplashAdActivity : BaseActivity() {
         })
     }
 
-    abstract fun getSplashImage(): Int
-
-    abstract fun getTargetActivity(): Class<*>?
+//    abstract fun getSplashImage(): Int
+//
+//    abstract fun getTargetActivity(): Class<*>?
 
 }
